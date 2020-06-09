@@ -1,19 +1,36 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
+  const [searchText, setSearchText] = useState('');
+
+  const searchTextHandler = (text) => {
+    setSearchText(text)
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View>
+      <View style={styles.searchBar}>
+        <TextInput
+            style={styles.textInput}
+            placeholder="Search Products..."
+            onChangeText={searchTextHandler}
+            value={searchText}
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  searchBar: {
+    padding: 50,
+    alignItems: 'center'
+  },
+  textInput: {
+    width: '80%',
+    borderColor: 'black',
+    borderWidth: 1,
+    padding: 10
   },
 });
