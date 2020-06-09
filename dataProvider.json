@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "name": "Shampoo",
+    "price": 10
+  },
+  {
+    "id": 2,
+    "name": "Conditioner",
+    "price": 20
+  },
+  {
+    "id": 3,
+    "name": "Baby Wipes",
+    "price": 30
+  },
+  {
+    "id": 4,
+    "name": "Chocolate",
+    "price": 40
+  },
+  {
+    "id": 5,
+    "name": "Banana",
+    "price": 50
+  },
+  {
+    "id": 6,
+    "name": "Avocado",
+    "price": 60
+  },
+  {
+    "id": 7,
+    "name": "Eggs",
+    "price": 70
+  },
+  {
+    "id": 8,
+    "name": "Milk",
+    "price": 80
+  },
+  {
+    "id": 9,
+    "name": "Chicken",
+    "price": 90
+  },
+  {
+    "id": 10,
+    "name": "Potatoes",
+    "price": 100
+  },
+  {
+    "id": 11,
+    "name": "Peas",
+    "price": 110
+  },
+  {
+    "id": 12,
+    "name": "Chick Peas",
+    "price": 120
+  },
+  {
+    "id": 13,
+    "name": "Tomatoes",
+    "price": 130
+  },
+  {
+    "id": 14,
+    "name": "Cucumber",
+    "price": 140
+  },
+  {
+    "id": 15,
+    "name": "Lettuce",
+    "price": 150
+  }
+]
