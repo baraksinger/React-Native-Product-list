@@ -1,18 +1,16 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, TextInput, FlatList, Modal, TouchableOpacity, Button} from 'react-native';
+import SearchBar from './components/SearchBar'
+import ProductItem from "./components/ProductItem";
+import ProductModal from "./components/ProductModal";
 
 const productsData = require('./dataProvider.json');
 
 export default function App() {
-    const [searchText, setSearchText] = useState('');
     const [products, setProducts] = useState([...productsData]);
     const [filteredProducts, setFilteredProducts] = useState([...productsData]);
-    const [modalVisible, setModalVisible] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
-
-    const searchTextHandler = (text) => {
-        setSearchText(text)
-    }
+    const [modalVisible, setModalVisible] = useState(false);
 
     const searchSubmitHandler = (event) => {
         let filter = event.nativeEvent.text.toLowerCase();
@@ -34,41 +32,26 @@ export default function App() {
 
     return (
         <View style={styles.screen}>
-            <View style={styles.searchBar}>
-                <TextInput
-                    style={styles.textInput}
-                    placeholder="Search Products..."
-                    onChangeText={searchTextHandler}
-                    value={searchText}
-                    onSubmitEditing={searchSubmitHandler}
-                />
-            </View>
+            <SearchBar
+                searchSubmitHandler={searchSubmitHandler}
+            />
             <View>
                 <FlatList
                 keyExtractor={(item) => item.id.toString()}
                 data={filteredProducts}
                 renderItem={ItemData => (
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => openPopupHandler(ItemData.item.id)}>
-                        <View style={styles.listItem}>
-                            <Text>{ItemData.item.name}</Text>
-                        </View>
-                    </TouchableOpacity>
+                    <ProductItem
+                        ItemData={ItemData}
+                        openPopupHandler={openPopupHandler}
+                    />
                 )}
                 />
             </View>
-            <Modal visible={modalVisible} animationType="slide">
-                <View style={styles.selectedProduct}>
-                    {selectedProduct && (
-                        <View>
-                            <Text>Product Details:</Text>
-                            <Text>ID: {selectedProduct.id}</Text>
-                            <Text>Name: {selectedProduct.name}</Text>
-                            <Text>Price: {selectedProduct.price}</Text>
-                            <Button title="Close" onPress={closePopupHandler} />
-                        </View>
-                    )}
-                </View>
-            </Modal>
+            <ProductModal
+                modalVisible={modalVisible}
+                selectedProduct={selectedProduct}
+                closePopupHandler={closePopupHandler}
+            />
         </View>
     );
 }
@@ -76,28 +59,5 @@ export default function App() {
 const styles = StyleSheet.create({
     screen: {
         padding: 50
-    },
-    searchBar: {
-        alignItems: 'center',
-    },
-    textInput: {
-        width: '80%',
-        borderColor: 'black',
-        borderWidth: 1,
-        padding: 10
-    },
-    listItem: {
-        width: '80%',
-        backgroundColor: '#ccc',
-        padding: 10,
-        marginVertical: 10,
-        borderColor: 'black',
-        borderWidth: 1,
-        alignSelf: 'center'
-    },
-    selectedProduct: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
     }
 });
