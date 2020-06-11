@@ -3,6 +3,7 @@ import {FlatList, StyleSheet, View, ActivityIndicator, RefreshControl} from "rea
 import SearchBar from "../components/SearchBar";
 import ProductItem from "../components/ProductItem";
 import ProductModal from "../components/ProductModal";
+import ListFooter from "../components/ListFooter"
 
 import {
     fetchProducts,
@@ -15,7 +16,7 @@ import {
 
 import {useDispatch, useSelector} from "react-redux";
 
-export default function Products() {
+export default function ProductListBuilder() {
     const filteredProducts = useSelector(state => state.filteredProducts);
     const selectedProduct = useSelector(state => state.selectedProduct);
     const modalVisible = useSelector(state => state.modalVisible);
@@ -59,17 +60,6 @@ export default function Products() {
         setLoadedPages(1);
     }
 
-    const renderFooter = () => {
-        if(!loading){
-            return null;
-        }
-        return (
-            <View style={{width: '100%', height: '100%'}}>
-                <ActivityIndicator style={{ color: '#000' }} />
-            </View>
-        );
-    };
-
     return (
         <View style={styles.screen}>
             <SearchBar
@@ -92,7 +82,11 @@ export default function Products() {
                 )}
                 onEndReachedThreshold={0.4}
                 onEndReached={loadMoreHandler}
-                ListFooterComponent={renderFooter}
+                ListFooterComponent={() => (
+                    <ListFooter
+                        loading={loading}
+                    />
+                )}
             />
             <ProductModal
                 modalVisible={modalVisible}
