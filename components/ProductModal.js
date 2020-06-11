@@ -10,7 +10,7 @@ const ProductModal = ({modalVisible, selectedProduct, closePopupHandler}) => {
                         <Text>Product Details:</Text>
                         <Text>ID: {selectedProduct.id}</Text>
                         <Text>Name: {selectedProduct.name}</Text>
-                        <Text>Price: {selectedProduct.price}</Text>
+                        <Text>Price: ${selectedProduct.price}</Text>
                         <Button title="Close" onPress={closePopupHandler} />
                     </View>
                 )}

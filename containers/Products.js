@@ -51,19 +51,6 @@ export default function Products() {
             }
     }
 
-
-    const renderSeparator = () => {
-        return (
-            <View
-                style={{
-                    height: 2,
-                    width: '100%',
-                    backgroundColor: '#CED0CE'
-                }}
-            />
-        );
-    };
-
     const renderFooter = () => {
         if(!loading){
             return null;
@@ -89,7 +76,6 @@ export default function Products() {
                         openPopupHandler={openPopupHandler}
                     />
                 )}
-                renderSeparator={renderSeparator}
                 onEndReachedThreshold={0.4}
                 onEndReached={loadMoreHandler}
                 ListFooterComponent={renderFooter}
