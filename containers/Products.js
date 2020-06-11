@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {FlatList, StyleSheet, View, ActivityIndicator, Button} from "react-native";
-import SearchBar from "./components/SearchBar";
-import ProductItem from "./components/ProductItem";
-import ProductModal from "./components/ProductModal";
+import SearchBar from "../components/SearchBar";
+import ProductItem from "../components/ProductItem";
+import ProductModal from "../components/ProductModal";
 
 import {
     fetchProducts,
@@ -10,7 +10,7 @@ import {
     selectProduct,
     unselectProduct,
     toggleModal,
-} from './store/actions/products';
+} from '../store/actions/products';
 
 import {useDispatch, useSelector} from "react-redux";
 
@@ -18,10 +18,10 @@ export default function Products() {
     const filteredProducts = useSelector(state => state.filteredProducts);
     const selectedProduct = useSelector(state => state.selectedProduct);
     const modalVisible = useSelector(state => state.modalVisible);
+    const loading = useSelector(state => state.loading);
     const endOfList = useSelector(state => state.endOfList);
 
     const [loadedPages, setLoadedPages] = useState(0);
-    const [loading, setLoading] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -46,10 +46,8 @@ export default function Products() {
 
     const loadMoreHandler = () => {
             if (!loading && !endOfList) {
-                setLoading(true);
                 dispatch(fetchProducts(loadedPages));
                 setLoadedPages(loadedPages + 1);
-                setTimeout(() => setLoading(false), 2000);
             }
     }
 
