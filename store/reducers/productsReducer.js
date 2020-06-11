@@ -43,10 +43,9 @@ const productsReducer = (state = initialState, action) => {
         case TOGGLE_LOADING:
             return {...state, loading: !state.loading};
         case TOGGLE_REFRESHING:
-            console.log('refreshing to', !state.refreshing);
             return {...state, refreshing: !state.refreshing};
         case SET_END_OF_LIST:
-            return {...state, endOfList: true}
+            return {...state, endOfList: action.value}
         default:
             return state
     }

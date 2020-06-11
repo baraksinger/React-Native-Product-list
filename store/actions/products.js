@@ -42,8 +42,8 @@ export const toggleRefreshing = () => {
     return { type: TOGGLE_REFRESHING}
 }
 
-export const setEndOfList = () => {
-    return { type: SET_END_OF_LIST}
+export const setEndOfList = (value) => {
+    return { type: SET_END_OF_LIST, value: value}
 }
 
 export const fetchProducts = (page) => {
@@ -55,7 +55,7 @@ export const fetchProducts = (page) => {
                 dispatch(addProducts(response.data));
             }
             else {
-                dispatch(setEndOfList())
+                dispatch(setEndOfList(true))
             }
             setTimeout(() => dispatch(toggleLoading()), 2000);
         })
@@ -72,11 +72,8 @@ export const refreshProducts = () => {
         axios.get(`products?page=0`)
         .then(response => {
             if (response.data.length > 0) {
-                console.log(response.data);
                 dispatch(setProducts(response.data));
-            }
-            else {
-                dispatch(setEndOfList())
+                dispatch(setEndOfList(false));
             }
             dispatch(toggleRefreshing());
         })
