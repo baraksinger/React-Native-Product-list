@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList, StyleSheet, View, ActivityIndicator, Button} from "react-native";
+import {FlatList, StyleSheet, View, ActivityIndicator, RefreshControl} from "react-native";
 import SearchBar from "../components/SearchBar";
 import ProductItem from "../components/ProductItem";
 import ProductModal from "../components/ProductModal";
 
 import {
     fetchProducts,
+    refreshProducts,
     searchProduct,
     selectProduct,
     unselectProduct,
@@ -19,6 +20,7 @@ export default function Products() {
     const selectedProduct = useSelector(state => state.selectedProduct);
     const modalVisible = useSelector(state => state.modalVisible);
     const loading = useSelector(state => state.loading);
+    const refreshing = useSelector(state => state.refreshing);
     const endOfList = useSelector(state => state.endOfList);
 
     const [loadedPages, setLoadedPages] = useState(0);
@@ -51,6 +53,12 @@ export default function Products() {
             }
     }
 
+    //load first page and clear all products in the list
+    const onRefreshHandler = () => {
+        dispatch(refreshProducts());
+        setLoadedPages(1);
+    }
+
     const renderFooter = () => {
         if(!loading){
             return null;
@@ -70,6 +78,12 @@ export default function Products() {
             <FlatList
                 keyExtractor={(item) => item.id.toString()}
                 data={filteredProducts}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefreshHandler}
+                    />
+                }
                 renderItem={ItemData => (
                     <ProductItem
                         ItemData={ItemData}

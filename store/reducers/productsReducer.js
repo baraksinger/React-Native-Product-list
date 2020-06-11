@@ -1,10 +1,12 @@
 import {
     ADD_PRODUCTS,
+    SET_PRODUCTS,
     SEARCH_PRODUCT,
     SELECT_PRODUCT,
     UNSELECT_PRODUCT,
     TOGGLE_MODAL,
     TOGGLE_LOADING,
+    TOGGLE_REFRESHING,
     SET_END_OF_LIST
 } from '../actions/products'
 
@@ -15,6 +17,7 @@ const initialState = {
     modalVisible: false,
     loadedPages: 0,
     loading: false,
+    refreshing: false,
     endOfList: false
 };
 
@@ -23,6 +26,9 @@ const productsReducer = (state = initialState, action) => {
         case ADD_PRODUCTS:
             let updatedProducts =  state.products.concat(action.products);
             return {...state, products: updatedProducts, filteredProducts: updatedProducts}
+        case SET_PRODUCTS:
+            let productsCopy =  [...action.products];
+            return {...state, products: productsCopy, filteredProducts: productsCopy}
         case SEARCH_PRODUCT:
             let filter = action.productName.toLowerCase();
             let filteredResults = state.products.filter(product => product.name.toLowerCase().indexOf(filter) > -1)
@@ -36,8 +42,10 @@ const productsReducer = (state = initialState, action) => {
             return {...state, modalVisible: !state.modalVisible};
         case TOGGLE_LOADING:
             return {...state, loading: !state.loading};
+        case TOGGLE_REFRESHING:
+            console.log('refreshing to', !state.refreshing);
+            return {...state, refreshing: !state.refreshing};
         case SET_END_OF_LIST:
-            console.log('state endoflist is:', state.endOfList);
             return {...state, endOfList: true}
         default:
             return state
