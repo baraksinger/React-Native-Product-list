@@ -1,0 +1,207 @@
+[
+  {
+    "id": 1,
+    "name": "Strawberries",
+    "price": 1,
+    "image": "https://cdn.pixabay.com/photo/2018/05/26/10/54/strawberries-3431122_960_720.jpg"
+  },
+  {
+    "id": 2,
+    "name": "pear",
+    "price": 2,
+    "image": "https://cdn.pixabay.com/photo/2016/07/22/09/59/fruit-1534494__340.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Pomegranate",
+    "price": 3,
+    "image": "https://cdn.pixabay.com/photo/2014/09/27/11/24/pomegranate-463376__340.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Apple",
+    "price": 4,
+    "image": "https://cdn.pixabay.com/photo/2018/08/02/21/51/red-3580560_960_720.jpg"
+  },
+  {
+    "id": 5,
+    "name": "cabbage",
+    "price": 5,
+    "image": "https://cdn.pixabay.com/photo/2019/07/23/08/55/vegetable-4357039_960_720.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Avocado",
+    "price": 6,
+    "image": "https://cdn.pixabay.com/photo/2020/05/25/16/28/avocado-5219358_1280.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Eggs",
+    "price": 7,
+    "image": "https://cdn.pixabay.com/photo/2020/03/05/07/26/egg-4903676_960_720.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Pepper",
+    "price": 8,
+    "image": "https://cdn.pixabay.com/photo/2019/07/16/15/27/bell-pepper-4342134_960_720.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Chicken",
+    "price": 9,
+    "image": "https://cdn.pixabay.com/photo/2019/10/21/17/12/wings-4566612_960_720.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Dragon Fruit",
+    "price": 10,
+    "image": "https://cdn.pixabay.com/photo/2017/07/06/10/04/fruit-2477516__340.jpg"
+  },
+  {
+    "id": 11,
+    "name": "BlueBerries",
+    "price": 11,
+    "image": "https://cdn.pixabay.com/photo/2015/03/26/09/40/blueberries-690072_1280.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Cheese",
+    "price": 2,
+    "image": "https://cdn.pixabay.com/photo/2017/01/11/19/56/cheese-1972744_960_720.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Tomatoes",
+    "price": 3,
+    "image": "https://cdn.pixabay.com/photo/2019/03/30/13/54/tomatoes-4091213_960_720.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Tofu",
+    "price": 4,
+    "image": "https://cdn.pixabay.com/photo/2015/01/12/11/34/tofu-597228__340.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Steak",
+    "price": 5,
+    "image": "https://cdn.pixabay.com/photo/2017/04/30/09/30/steak-2272464_960_720.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Bread",
+    "price": 6,
+    "image": "https://cdn.pixabay.com/photo/2019/10/31/18/02/bread-4592482_960_720.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Sushi",
+    "price": 7,
+    "image": "https://cdn.pixabay.com/photo/2020/03/30/17/45/japanese-food-4984956_960_720.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Dates",
+    "price": 8,
+    "image": "https://cdn.pixabay.com/photo/2018/08/02/14/21/dates-3579610_960_720.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Beets",
+    "price": 9,
+    "image": "https://cdn.pixabay.com/photo/2017/07/08/17/44/vegetable-2485059_960_720.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Red Sweet Potatoes",
+    "price": 10,
+    "image": "https://cdn.pixabay.com/photo/2018/07/24/13/01/vegetable-3559112_960_720.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Watermelon",
+    "price": 9,
+    "image": "https://cdn.pixabay.com/photo/2018/12/15/16/08/watermelon-3877125_960_720.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Pasta",
+    "price": 8,
+    "image": "https://cdn.pixabay.com/photo/2016/04/02/15/13/noodle-1303003_960_720.jpg"
+
+  },
+  {
+    "id": 23,
+    "name": "Fish",
+    "price": 7,
+    "image": "https://cdn.pixabay.com/photo/2015/04/08/13/13/food-712665__340.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Hamburger",
+    "price": 6,
+    "image": "https://cdn.pixabay.com/photo/2017/08/04/11/35/burger-2579902_960_720.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Pizza",
+    "price": 5,
+    "image": "https://cdn.pixabay.com/photo/2017/02/15/10/57/pizza-2068272__340.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Red Chilies",
+    "price": 6,
+    "image": "https://cdn.pixabay.com/photo/2019/07/18/13/46/red-4346510_960_720.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Quinoa",
+    "price": 7,
+    "image": "https://cdn.pixabay.com/photo/2014/07/30/18/37/quinoa-405538_960_720.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Broccoli",
+    "price": 8,
+    "image": "https://cdn.pixabay.com/photo/2016/03/05/19/02/broccoli-1238250_1280.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Apricot",
+    "price": 9,
+    "image": "https://cdn.pixabay.com/photo/2017/08/01/08/11/food-2563407_960_720.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Ham",
+    "price": 10,
+    "image": "https://cdn.pixabay.com/photo/2013/07/13/12/31/food-159787_960_720.png"
+  },
+  {
+    "id": 31,
+    "name": "Oreo",
+    "price": 9,
+    "image": "https://cdn.pixabay.com/photo/2015/08/06/16/21/cookies-878088_960_720.jpg"
+  },
+  {
+    "id": 32,
+    "name": "French Fries",
+    "price": 8,
+    "image": "https://cdn.pixabay.com/photo/2015/09/05/01/05/french-fries-923687__340.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Ginger",
+    "price": 7,
+    "image": "https://cdn.pixabay.com/photo/2020/04/29/12/35/ginger-5108742_960_720.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Burrito",
+    "price": 6,
+    "image": "https://cdn.pixabay.com/photo/2017/06/29/20/09/mexican-2456038_960_720.jpg"
+  }
+]

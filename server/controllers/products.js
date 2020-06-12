@@ -1,4 +1,4 @@
-const productsDB = require('../db/dataProvider');
+const productsDB = require('../data/dataProvider');
 
 const getProducts = (req, res) => {
     let page = req.query.page;

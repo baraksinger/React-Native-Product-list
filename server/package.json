@@ -5,7 +5,7 @@
   "main": "product-list-api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon product-list-api.js"
+    "start": "node product-list-api.js"
   },
   "keywords": [],
   "author": "",
