@@ -11,7 +11,7 @@ const ProductModal = ({modalVisible, selectedProduct, closePopupHandler}) => {
                         <Text>ID: {selectedProduct.id}</Text>
                         <Text>Name: {selectedProduct.name}</Text>
                         <Text>Price: ${selectedProduct.price}</Text>
-                        <Button title="Close" onPress={closePopupHandler} />
+                        <Button title="Close" onPress={closePopupHandler}/>
                     </View>
                 )}
             </View>
@@ -22,8 +22,8 @@ const ProductModal = ({modalVisible, selectedProduct, closePopupHandler}) => {
 const styles = StyleSheet.create({
     selectedProduct: {
         flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 });
 export default ProductModal;

@@ -48,10 +48,10 @@ export default function ProductListBuilder() {
     }
 
     const loadMoreHandler = () => {
-            if (!loading && !endOfList) {
-                dispatch(fetchProducts(loadedPages));
-                setLoadedPages(loadedPages + 1);
-            }
+        if (!loading && !endOfList) {
+            dispatch(fetchProducts(loadedPages));
+            setLoadedPages(loadedPages + 1);
+        }
     }
 
     //load first page and clear all products in the list

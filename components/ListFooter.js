@@ -2,12 +2,12 @@ import {ActivityIndicator, StyleSheet, View} from "react-native";
 import React from "react";
 
 const listFooter = ({loading}) => {
-    if(!loading){
+    if (!loading) {
         return null;
     }
     return (
         <View style={styles.indicatorContainer}>
-            <ActivityIndicator style={styles.indicator} />
+            <ActivityIndicator style={styles.indicator}/>
         </View>
     );
 };

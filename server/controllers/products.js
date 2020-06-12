@@ -2,7 +2,7 @@ const productsDB = require('../db/dataProvider');
 
 const getProducts = (req, res) => {
     let page = req.query.page;
-    let top = productsDB.slice(page*10, page*10+10);
+    let top = productsDB.slice(page * 10, page * 10 + 10);
     res.json(top);
 }
 

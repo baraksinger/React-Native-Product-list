@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     },
     textInput: {
         width: '80%',
-            borderColor: 'black',
-            borderWidth: 1,
-            padding: 10
+        borderColor: 'black',
+        borderWidth: 1,
+        padding: 10
     }
 });
 
