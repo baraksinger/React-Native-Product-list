@@ -1,12 +1,7 @@
 import {StyleSheet, TextInput, View} from "react-native";
-import React, {useState} from "react";
+import React from "react";
 
-const SearchBar = ({searchSubmitHandler}) => {
-    const [searchText, setSearchText] = useState('');
-
-    const searchTextHandler = (text) => {
-        setSearchText(text)
-    }
+const SearchBar = ({searchTextHandler, searchText}) => {
     return (
         <View style={styles.searchBar}>
             <TextInput
@@ -14,7 +9,6 @@ const SearchBar = ({searchSubmitHandler}) => {
                 placeholder="Search Products..."
                 onChangeText={searchTextHandler}
                 value={searchText}
-                onSubmitEditing={() => searchSubmitHandler(searchText)}
             />
         </View>
     );

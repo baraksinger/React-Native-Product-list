@@ -9,6 +9,7 @@ export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 export const TOGGLE_LOADING = 'TOGGLE_LOADING';
 export const TOGGLE_REFRESHING = 'TOGGLE_REFRESHING';
 export const SET_END_OF_LIST = 'SET_END_OF_LIST';
+export const SET_SEARCH_TEXT = 'SET_SEARCH_TEXT';
 
 export const addProducts = (products) => {
     return {type: ADD_PRODUCTS, products: products}
@@ -46,10 +47,14 @@ export const setEndOfList = (value) => {
     return {type: SET_END_OF_LIST, value: value}
 }
 
-export const fetchProducts = (page) => {
+export const setSearchText = (text) => {
+    return {type: SET_SEARCH_TEXT, text: text}
+}
+
+export const fetchProducts = (page, searchText) => {
     return dispatch => {
         dispatch(toggleLoading());
-        axios.get(`products?page=${page}`)
+        axios.get(`products?page=${page}&searchText=${searchText}`)
         .then(response => {
             if (response.data.length > 0) {
                 dispatch(addProducts(response.data));
@@ -65,10 +70,10 @@ export const fetchProducts = (page) => {
     };
 };
 
-export const refreshProducts = () => {
+export const refreshProducts = (searchText) => {
     return dispatch => {
         dispatch(toggleRefreshing());
-        axios.get(`products?page=0`)
+        axios.get(`products?page=0&searchText=${searchText}`)
         .then(response => {
             if (response.data.length > 0) {
                 dispatch(setProducts(response.data));

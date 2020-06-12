@@ -7,7 +7,8 @@ import {
     TOGGLE_MODAL,
     TOGGLE_LOADING,
     TOGGLE_REFRESHING,
-    SET_END_OF_LIST
+    SET_END_OF_LIST,
+    SET_SEARCH_TEXT
 } from '../actions/products'
 
 const initialState = {
@@ -18,7 +19,8 @@ const initialState = {
     loadedPages: 0,
     loading: false,
     refreshing: false,
-    endOfList: false
+    endOfList: false,
+    searchText: ''
 };
 
 const productsReducer = (state = initialState, action) => {
@@ -55,6 +57,9 @@ const productsReducer = (state = initialState, action) => {
 
         case SET_END_OF_LIST:
             return {...state, endOfList: action.value};
+
+        case SET_SEARCH_TEXT:
+            return {...state, searchText: action.text};
 
         default:
             return state
