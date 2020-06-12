@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList, StyleSheet, View, ActivityIndicator, RefreshControl} from "react-native";
+import {FlatList, StyleSheet, View, Text, ActivityIndicator, RefreshControl} from "react-native";
 import SearchBar from "../components/SearchBar";
 import ProductItem from "../components/ProductItem";
 import ProductModal from "../components/ProductModal";
@@ -65,29 +65,40 @@ export default function ProductListBuilder() {
             <SearchBar
                 searchSubmitHandler={searchSubmitHandler}
             />
-            <FlatList
-                keyExtractor={(item) => item.id.toString()}
-                data={filteredProducts}
-                refreshControl={
-                    <RefreshControl
-                        refreshing={refreshing}
-                        onRefresh={onRefreshHandler}
-                    />
+            <View>
+                {
+                    filteredProducts.length ?
+                        (<FlatList
+                            keyExtractor={(item) => item.id.toString()}
+                            data={filteredProducts}
+                            refreshControl={
+                                <RefreshControl
+                                    refreshing={refreshing}
+                                    onRefresh={onRefreshHandler}
+                                />
+                            }
+                            renderItem={ItemData => (
+                                <ProductItem
+                                    ItemData={ItemData}
+                                    openPopupHandler={openPopupHandler}
+                                />
+                            )}
+                            onEndReachedThreshold={0.4}
+                            onEndReached={loadMoreHandler}
+                            ListFooterComponent={() => (
+                                <ListFooter
+                                    loading={loading}
+                                />
+                            )}
+                        />)
+                        :
+                        !loading && (
+                            <View style={styles.emptyMessageContainer}>
+                                <Text style={styles.emptyMessageStyle}>No results found</Text>
+                            </View>
+                        )
                 }
-                renderItem={ItemData => (
-                    <ProductItem
-                        ItemData={ItemData}
-                        openPopupHandler={openPopupHandler}
-                    />
-                )}
-                onEndReachedThreshold={0.4}
-                onEndReached={loadMoreHandler}
-                ListFooterComponent={() => (
-                    <ListFooter
-                        loading={loading}
-                    />
-                )}
-            />
+            </View>
             <ProductModal
                 modalVisible={modalVisible}
                 selectedProduct={selectedProduct}
@@ -99,7 +110,14 @@ export default function ProductListBuilder() {
 
 const styles = StyleSheet.create({
     screen: {
+        padding: 50,
+        flex: 1
+    },
+    emptyMessageContainer: {
         flex: 1,
-        padding: 50
+        justifyContent: 'center'
+    },
+    emptyMessageStyle: {
+        textAlign: 'center',
     }
 });
